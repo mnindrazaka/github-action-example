@@ -4,11 +4,13 @@ jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
-      - name: connect to vps
+      - name: pull changes to vps
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: |
+            cd /Projects/github-action-example
+            git pull origin main
