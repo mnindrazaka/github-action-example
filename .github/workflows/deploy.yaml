@@ -1,7 +1,7 @@
 name: Deploy VPS
 on: [push]
 jobs:
-  Hello World:
+  hello_world:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World"
